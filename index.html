@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダムさいころ人生ゲーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>ランダムさいころ人生ゲーム</h1>
+        <div id="instructions">
+            <h2>ゲーム説明</h2>
+            <p>このゲームでは、サイコロを振ってゴールを目指します。</p>
+            <ul>
+                <li>ゴールに最初に到達したプレイヤーが勝利です。</li>
+                <li>サイコロの目はプレイヤーごとに異なります。</li>
+                <li>アクションカードを使用して戦略的にプレイしましょう。</li>
+                <li>Stable Diffusionをつかってゲーム内の壁紙を変更することができます。(実装準備中)</li>
+            </ul>
+            <button id="continue-to-setup">ゲームを始める</button>
+        </div>
+        <div id="setup" style="display: none;">
+            <label for="player-count">プレイヤー人数を選んでください:</label>
+            <select id="player-count">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <button id="start-game">ゲーム開始</button>
+        </div>
+        <div id="board-container" style="display: none;">
+            <div id="game-content">
+                <div id="board"></div>
+                <div id="player-info">
+                    <p id="current-player">現在のプレイヤー: <span id="player-name"></span></p>
+                    <button id="roll-dice">さいころを振る</button>
+                    <button id="use-card">アクションカードを使用</button>
+                    <p id="dice-result">サイコロの目: <span id="dice-number"></span></p>
+                    <p id="player-position">プレイヤー位置: <span id="position"></span></p>
+                    <p id="card-list">カード: <span id="cards"></span></p>
+                    <div id="card-description">
+                        <h4>アクションカード説明</h4>
+                        <ul>
+                            <li><strong>のぞみカード:</strong> サイコロを5回振れる。</li>
+                            <li><strong>あっちいけカード:</strong> 他のプレイヤー全員を振り出しに戻す。</li>
+                            <li><strong>神カード:</strong> ゴール手前のマスに移動する。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="log">
+                    <h3>ログ</h3>
+                    <ul id="log-list"></ul>
+                </div>
+            </div>
+        </div>
+        <div id="game-over" style="display: none;">
+            <h2>ゲーム終了</h2>
+            <div id="rankings"></div>
+            <button id="restart-game">もう一度やる</button>
+            <button id="back-to-title">タイトルに戻る</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

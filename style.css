@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* #game-container {
+    text-align: center;
+    margin: 20px;
+} */
+
+/* 背景画像を適用 */
+#board-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('generated_image.webp') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+    border: 2px solid #000;
+    position: relative;
+    min-height: 100vh; /* 背景を全画面に広げる */
+}
+
+/* 背景にフィルターを追加して視認性を向上 */
+#board-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* 半透明の白いフィルター */
+    z-index: 0; /* ゲーム要素の後ろに配置 */
+}
+
+/* ゲームエリアを分離 */
+#game-content {
+    position: relative;
+    z-index: 1; /* フィルターより前面に配置 */
+    background: rgba(255, 255, 255, 0.9); /* ゲーム要素の背景色 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.board-cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin: 2px;
+    position: relative;
+}
+
+.board-cell.goal {
+    background-color: gold;
+    font-weight: bold;
+}
+
+.player-token {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.player1 { background-color: red; }
+.player2 { background-color: blue; }
+.player3 { background-color: green; }
+.player4 { background-color: purple; }
+
+#player-info, #log {
+    margin: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin: auto;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+}
