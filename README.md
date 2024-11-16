@@ -1,2 +1,2 @@
 # Game window
-[Portfolio website](https://yamauchiyudai.github.io/dice_game/)
+[game page](https://yamauchiyudai.github.io/dice_game/blob/main/index.html)
